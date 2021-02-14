@@ -14,7 +14,7 @@
 ### Association
 
 - has_many :items
-- has_one :purchasers
+- has_many :purchases
 
 ## items テーブル
 
@@ -49,9 +49,9 @@
 
 ### Association
 
-- belongs_to :purchaser
+- belongs_to :purchase
 
-## purchasers
+## purchases
 
 | Column             | Type   | Option                         |
 | ------------------ | -------|--------------------------------|
@@ -61,4 +61,4 @@
 
 - belongs_to :user
 - has_one :shipping address
-- has_many :items
+- belongs_to :item
