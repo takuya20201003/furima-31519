@@ -24,7 +24,7 @@
 | description                     | text       | null: false, foreign_key: true |
 | category_id                     | integer    | null: false, foreign_key: true |
 | condition_id                    | integer    | null: false, foreign_key: true |
-| shipping_charges_id             | integer    | null: false, foreign_key: true |
+| shipping_charge_id              | integer    | null: false, foreign_key: true |
 | prefecture_id                   | integer    | null: false, foreign_key: true |
 | completed_at_id                 | integer    | null: false, foreign_key: true |
 | price                           | integer    | null: false, foreign_key: true |

@@ -1,19 +1,19 @@
-<mxfile host="65bd71144e" modified="2021-02-14T09:00:21.462Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.0 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="RW4pphTNETkz5P337uRu" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-14T09:21:01.511Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.0 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="UauPoBRRYwC2VadC5gJL" type="embed">
     <diagram id="Ja5jqLD-JWIxldkkETn1" name="ページ1">
-        <mxGraphModel dx="572" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1131" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="2" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="20" y="100" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="・nickname&#10;・email&#10;・password&#10;・family_name&#10;・first_name&#10;・family_name_kana&#10;・first_name_kana&#10;・birth_day" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="2">
+                <mxCell id="3" value="・nickname&#10;・email&#10;・encrypted_password&#10;・family_name&#10;・first_name&#10;・family_name_kana&#10;・first_name_kana&#10;・birth_day" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="2">
                     <mxGeometry y="30" width="160" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="380" y="100" width="230" height="180" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="・image&#10;・name&#10;・description&#10;・category&#10;・condition&#10;・shipping_charges&#10;・prefecture&#10;・completed_at&#10;・price&#10;・user&#10;&#10;&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="4">
+                <mxCell id="5" value="・name&#10;・description&#10;・category_id&#10;・condition_id&#10;・shipping_charges_id&#10;・prefecture_id&#10;・completed_at_id&#10;・price&#10;・user&#10;&#10;&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="4">
                     <mxGeometry y="30" width="230" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="" style="fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;strokeColor=#f0f0f0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="4" target="5">
@@ -25,7 +25,7 @@
                 <mxCell id="6" value="shipping addresses" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="400" y="425" width="190" height="150" as="geometry"/>
                 </mxCell>
-                <mxCell id="7" value="・postal_code&#10;・prefecture&#10;・municipality&#10;・address&#10;・building&#10;・phone_number&#10;・purchase&#10;&#10;&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="6">
+                <mxCell id="7" value="・postal_code&#10;・prefecture_id&#10;・municipality&#10;・address&#10;・building&#10;・phone_number&#10;・purchase&#10;&#10;&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="6">
                     <mxGeometry y="30" width="190" height="120" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;" edge="1" parent="1">
