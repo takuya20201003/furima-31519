@@ -28,7 +28,7 @@
 | prefecture_id                   | integer    | null: false, foreign_key: true |
 | completed_at_id                 | integer    | null: false, foreign_key: true |
 | price                           | integer    | null: false, foreign_key: true |
-| user_id                         | references | null: false, foreign_key: true |
+| user                            | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -45,7 +45,7 @@
 | address        | string     | null: false                    |
 | building       | string     |                                |
 | phone_num      | string     | null: false                    |
-| purchase_id    | references | null: false, foreign_key: true |
+| purchase       | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -55,8 +55,8 @@
 
 | Column             | Type       | Option                         |
 | ------------------ | -----------|--------------------------------|
-| user_id            | references | null: false, foreign_key: true |
-| item_id            | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
+| item               | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :user
