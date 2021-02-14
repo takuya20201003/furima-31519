@@ -18,32 +18,34 @@
 
 ## items テーブル
 
-| Column                               | Type      | Option                         | 
-| ------------------------------------ | ----------| ------------------------------ |
-| name                                 | string    | null: false, foreign_key: true |
-| description                          | text      | null: false, foreign_key: true |
-| category_id                          | integer   | null: false, foreign_key: true |
-| condition_id                         | integer   | null: false, foreign_key: true |
-| who_will_pay_the_shipping_charges_id | integer   | null: false, foreign_key: true |
-| prefecture_id                        | integer   | null: false, foreign_key: true |
-| completed_at_id                      | integer   | null: false, foreign_key: true |
-| price                                | integer   | null: false, foreign_key: true |
+| Column                          | Type       | Option                         | 
+| ------------------------------- | ---------- | ------------------------------ |
+| name                            | string     | null: false, foreign_key: true |
+| description                     | text       | null: false, foreign_key: true |
+| category_id                     | integer    | null: false, foreign_key: true |
+| condition_id                    | integer    | null: false, foreign_key: true |
+| shipping_charges_id             | integer    | null: false, foreign_key: true |
+| prefecture_id                   | integer    | null: false, foreign_key: true |
+| completed_at_id                 | integer    | null: false, foreign_key: true |
+| price                           | integer    | null: false, foreign_key: true |
+| user_id                         | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :purchase
+- has_one :purchase
 
 ## shipping addresses
 
-| Column                      | Type     | Option                         |
-|---------------------------- |--------- | -------------------------------|
-| postal_code                 | string   | null: false, foreign_key: true |
-| prefecture                  | string   | null: false, foreign_key: true |
-| municipality                | string   | null: false, foreign_key: true |
-| address                     | string   | null: false, foreign_key: true |
-| building                    | string   |                                |
-| phone_number                | string   | null: false, foreign_key: true |
+| Column         | Type       | Option                         |
+|--------------- |----------- | -------------------------------|
+| postal_code    | string     | null: false                    |
+| prefecture_id  | integer    | null: false                    |
+| municipality   | string     | null: false                    |
+| address        | string     | null: false                    |
+| building       | string     |                                |
+| phone_num      | string     | null: false                    |
+| purchasers_id  | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -51,12 +53,12 @@
 
 ## purchasers
 
-| Column             | Type   | Option                    |
-| ------------------ | -------|---------------------------|
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-
+| Column             | Type   | Option                         |
+| ------------------ | -------|--------------------------------|
+| user_id            | string | null: false, foreign_key: true |
+| item_id            | string | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :user
 - has_one :shipping address
+- has_many :items
