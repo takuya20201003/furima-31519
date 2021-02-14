@@ -45,7 +45,7 @@
 | address        | string     | null: false                    |
 | building       | string     |                                |
 | phone_num      | string     | null: false                    |
-| purchasers_id  | references | null: false, foreign_key: true |
+| purchase_id    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -53,12 +53,12 @@
 
 ## purchases
 
-| Column             | Type   | Option                         |
-| ------------------ | -------|--------------------------------|
-| user_id            | string | null: false, foreign_key: true |
-| item_id            | string | null: false, foreign_key: true |
+| Column             | Type       | Option                         |
+| ------------------ | -----------|--------------------------------|
+| user_id            | references | null: false, foreign_key: true |
+| item_id            | references | null: false, foreign_key: true |
 ### Association
 
 - belongs_to :user
-- has_one :shipping address
+- has_one :shipping_address
 - belongs_to :item
