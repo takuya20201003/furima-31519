@@ -41,6 +41,16 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
+    it 'passwordが英語のみでは登録できないこと' do
+      @user.password = 'aaaaaa'
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+    end
+    it 'passwordが全角では登録できないこと' do
+      @user.password = 'ａａａａａａ'
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+    end
     it 'パスワードとパスワード（確認用）、値の一致が必須であること' do
       @user.password = 'test12'
       @user.password_confirmation = 'test13'
@@ -77,12 +87,12 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("First name kana can't be blank")
     end
-    it 'ユーザーの苗字のフリガナは全角での入力が必須であること' do
+    it 'ユーザーの苗字の全角カタカナでの入力が必須であること' do
       @user.family_name_kana = 'aa'
       @user.valid?
       expect(@user.errors.full_messages).to include("Family name kana is invalid")
     end
-    it 'ユーザーの名前のフリガナは全角での入力が必須であること' do
+    it 'ユーザーの名前の全角カタカナでの入力が必須であること' do
       @user.first_name_kana = 'aa'
       @user.valid?
       expect(@user.errors.full_messages).to include("First name kana is invalid")
