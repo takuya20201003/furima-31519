@@ -1,5 +1,5 @@
-class completed_at < ActiveHash::Base
-  self.date = [
+class CompletedAt < ActiveHash::Base
+  self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '1~2日で発送' },
     { id: 3, name: '2~3日で発送' },
