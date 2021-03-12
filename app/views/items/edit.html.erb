@@ -7,7 +7,7 @@ app/assets/stylesheets/items/new.css %>
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
-    <%= form_with #model: @item, local: true do |f| %>
+    <%= form_with model: @item, local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -65,7 +65,7 @@ app/assets/stylesheets/items/new.css %>
           配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:shipping_charge_id, Shipping_charge.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+        <%= f.collection_select(:shipping_charge_id, ShippingCharge.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
@@ -75,7 +75,7 @@ app/assets/stylesheets/items/new.css %>
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:completed_at_id, completed_at.all, :id, :data, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+        <%= f.collection_select(:completed_at_id, CompletedAt.all, :id, :name, {}, {class:"select-box", id:"item-scheduled-delivery"}) %>
       </div>
     </div>
 
@@ -128,7 +128,7 @@ app/assets/stylesheets/items/new.css %>
     
     <div class="sell-btn-contents">
       <%= f.submit "変更する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', "#", class:"back-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
   
   </div>
