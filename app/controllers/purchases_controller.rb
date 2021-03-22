@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   def index
+    @item = Item.find(params[:item_id])
     @purchase_shipping_address = PurchaseShippingAddress.new
   end
 
@@ -9,7 +10,7 @@ class PurchasesController < ApplicationController
       @purchase_shipping_address.save
       redirect_to action: :index
      else
-      render action: :new
+      render action: :index
      end
   end
 
@@ -18,4 +19,5 @@ class PurchasesController < ApplicationController
   def purchase_params
     params.require(:purchase_shipping_address).permit(:postal_code, :prefecture, :municipality, :address, :building, :phone_number)
   end
+  
 end
