@@ -7,6 +7,7 @@ class PurchasesController < ApplicationController
   def create
     @purchase_shipping_address = PurchaseShippingAddress.new(purchase_params)
      if @purchase_shipping_address.valid?
+      pay_item
       @purchase_shipping_address.save
       redirect_to action: :index
      else
@@ -17,7 +18,15 @@ class PurchasesController < ApplicationController
   private
   
   def purchase_params
-    params.require(:purchase_shipping_address).permit(:postal_code, :prefecture, :municipality, :address, :building, :phone_number)
+    params.require(:purchase_shipping_address).permit(:postal_code, :prefecture, :municipality, :address, :building, :phone_number).merge(token: params[:token])
   end
   
+  def pay_item
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+       Payjp::Charge.create(
+         amount: purchase_params[:price],
+         card: purchase_params[:token],
+         currency: 'jpy'
+       )
+  end
 end
