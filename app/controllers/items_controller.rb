@@ -51,6 +51,8 @@ class ItemsController < ApplicationController
   def move_to_root_path
     if current_user != @item.user
       redirect_to root_path
+    elsif @item.purchase
+      redirect_to root_path
     end
   end
 
