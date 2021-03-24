@@ -72,7 +72,7 @@ RSpec.describe PurchaseShippingAddress, type: :model do
         expect(@purchase_shipping_address.errors.full_messages).to include("Phone number is invalid")
       end
       it '電話番号が１２桁以上だと登録できない' do
-        @purchase_shipping_address.phone_number = '090123456789'
+        @purchase_shipping_address.phone_number = 090123456789
         @purchase_shipping_address.valid?
         expect(@purchase_shipping_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
       end
