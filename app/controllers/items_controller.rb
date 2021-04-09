@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_root_path, only: [:edit, :update, :destory]
-  before_action :search_item, only: [:index, :search]
+  before_action :search_item, only: [:index, :search, :show]
 
 
   def index
