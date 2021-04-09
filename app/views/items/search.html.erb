@@ -1,0 +1,16 @@
+  <div class='item-contents'>
+    <h2 class='title'>検索結果</h2>
+
+    <ul class='item-lists'>
+    <% if @results.length == 0 %>
+          <div class='該当する商品はありませんでした'>
+            <span>該当する商品はありませんでした</span>
+          </div>
+        <% end %>
+    <% @results.each do |item| %>
+      <li class='list'>
+        <%= link_to item_path(item.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag item.image, class: "item-img" %> 
+        <% end %>
+      <% end %>
