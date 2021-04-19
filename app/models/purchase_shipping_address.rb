@@ -4,10 +4,10 @@ class PurchaseShippingAddress
 
   with_options presence: true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
-    validates :prefecture_id, numericality: { other_than: 0 }
+    validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
     validates :municipality
     validates :address
-    validates :phone_number, length: { maximum: 11 }, format: { with: /\A[0-9]+\z/ }
+    validates :phone_number, length: { maximum: 12 }, format: { with: /\A[0-9]+\z/ }
     validates :user_id
     validates :item_id
     validates :token

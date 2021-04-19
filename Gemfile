@@ -83,3 +83,5 @@ group :production do
 end
 
 gem 'ransack'
+
+gem 'rails-i18n'
